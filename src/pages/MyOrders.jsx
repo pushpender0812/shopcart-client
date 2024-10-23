@@ -16,7 +16,7 @@ const MyOrders = () => {
       console.log("Fetching orders...");
       try {
         const response = await fetch(
-          `http://localhost:3000/api/user/view-myorder`,
+          `https://shopcart-server-h67p.onrender.com/api/user/view-myorder`,
           {
             method: "GET",
             headers: {

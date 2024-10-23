@@ -14,7 +14,7 @@ const Blogs = () => {
 	const getBlogs = async () => {
 		try {
 		  const response = await fetch(
-			`http://localhost:3000/api/user/view-blogs`,
+			`https://shopcart-server-h67p.onrender.com/api/user/view-blogs`,
 			{
 			  method: "GET",
 			  headers: {

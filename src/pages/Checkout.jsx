@@ -7,7 +7,7 @@ const Checkout = () => {
 
 	const getCartItem =  async () => {
 		try {
-		  const response = await fetch(`http://localhost:3000/api/user/view-cart`, {
+		  const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/view-cart`, {
 			method: "GET",
 			headers: {
 			  "Content-Type": "application/json",

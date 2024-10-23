@@ -9,7 +9,7 @@ console.log(wishLists,"ppfojli yada g");
                                                      
     try {
       const response = await fetch(
-        `http://localhost:3000/api/user/remove-wishlist?user_id=${user.result._id}&product_id=${id}`,
+        `https://shopcart-server-h67p.onrender.com/api/user/remove-wishlist?user_id=${user.result._id}&product_id=${id}`,
         {
           method: "POST",
           headers: {
@@ -40,7 +40,7 @@ console.log(wishLists,"ppfojli yada g");
     console.log("CArt", product);
     console.log("user id",user.result._id);
     try {
-      const response = await fetch(`http://localhost:3000/api/user/movetocart`, {
+      const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/movetocart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

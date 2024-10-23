@@ -54,7 +54,7 @@ const EditProfile = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/user/update-password?_id=${user.result._id}`,
+        `https://shopcart-server-h67p.onrender.com/api/user/update-password?_id=${user.result._id}`,
         {
           method: "POST",
           headers: {
@@ -96,7 +96,7 @@ const EditProfile = () => {
   
     try {
       const response = await fetch(
-        `http://localhost:3000/api/user/edit-profile?_id=${user.result._id}`,
+        `https://shopcart-server-h67p.onrender.com/api/user/edit-profile?_id=${user.result._id}`,
         {
           method: "POST",
           "Content-Type": "application/json",

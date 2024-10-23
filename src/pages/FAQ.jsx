@@ -31,7 +31,7 @@ const FAQ = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/user/ask-question`,
+        `https://shopcart-server-h67p.onrender.com/api/user/ask-question`,
         {
           method: "POST",
           headers: {
@@ -68,7 +68,7 @@ const FAQ = () => {
   const getAnswer = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/user/get-answer`,
+        `https://shopcart-server-h67p.onrender.com/api/user/get-answer`,
         {
           method: "GET",
           headers: {

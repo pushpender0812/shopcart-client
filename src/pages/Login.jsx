@@ -46,7 +46,7 @@ const Login = () => {
 		onSubmit:async(values) => {
 			try {
 
-				const response = await fetch(`http://localhost:3000/api/login`,{
+				const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/login`,{
 					method:"POST",
 					headers:{
 						"Content-Type":"application/json"

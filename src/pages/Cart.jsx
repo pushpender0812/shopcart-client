@@ -15,7 +15,7 @@ const Cart = () => {
     console.log("remove from cart",productId);
     try {
       const response = await fetch(
-        `http://localhost:3000/api/user/remove-cart?user_id=${user.result._id}&product_id=${productId}`,
+        `https://shopcart-server-h67p.onrender.com/api/user/remove-cart?user_id=${user.result._id}&product_id=${productId}`,
         {
           method: "POST",
           headers: {
@@ -56,7 +56,7 @@ const Cart = () => {
       setCart(updatedCart);
 
       const response = await fetch(
-        `http://localhost:3000/api/user/update-cart-quantity?user_id=${user.result._id}&product_id=${productId}`,
+        `https://shopcart-server-h67p.onrender.com/api/user/update-cart-quantity?user_id=${user.result._id}&product_id=${productId}`,
         {
           method: "POST",
           headers: {
@@ -126,7 +126,7 @@ const Cart = () => {
   const getCoupon = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/user/get-coupon`,
+        `https://shopcart-server-h67p.onrender.com/api/user/get-coupon`,
         {
           method: "GET",
           headers: {
@@ -216,7 +216,7 @@ const Cart = () => {
     try {
       // Fetching order details
       const orderResponse = await fetch(
-        `http://localhost:3000/api/user/checkout`,
+        `https://shopcart-server-h67p.onrender.com/api/user/checkout`,
         {
           method: "POST",
           headers: {
@@ -238,7 +238,7 @@ const Cart = () => {
       const orderResult = await orderResponse.json();
 
       // Fetching Razorpay key
-      const keyResponse = await fetch(`http://localhost:3000/api/user/key`, {
+      const keyResponse = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/key`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -304,7 +304,7 @@ const Cart = () => {
 
             const result = JSON.parse(verificationText);
             if (result.success) {
-              window.location.href = `http://localhost:5173/paymentsuccess?${response.razorpay_payment_id}`;
+              window.location.href = `https://shopcart-server-h67p.onrender.com/paymentsuccess?${response.razorpay_payment_id}`;
               removeFromCart(product_id);
             } else {
               console.error("Payment verification failed:", result.message);
