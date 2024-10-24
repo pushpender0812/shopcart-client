@@ -1,3 +1,3 @@
-export const baseurl = 'https://shopcart-client-omega.vercel.app'
+export const baseurl = 'https://shopcart-server-h67p.onrender.com'
 
-export const imageurl = 'https://shopcart-client-omega.vercel.app/'
+export const imageurl = 'https://shopcart-server-h67p.onrender.com'
