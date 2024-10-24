@@ -32,7 +32,7 @@ export const AuthProvider = ({children}) => {
 
     const getCategoryData = async() => {
         try {
-            const response = await fetch(`http://localhost:3000/api/getcategory-data`,{
+            const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/getcategory-data`,{
                 method:"GET",
                 headers: {
                     "Content-Type": "application/json",
