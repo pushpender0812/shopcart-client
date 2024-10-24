@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../store/Auth";
 import { toast } from "react-toastify";
+import { baseurl } from "../constant/constant";
 // import { loginUser } from '../../../server/controllers/apiController/api-user-controller'
 
 const MyOrders = () => {
@@ -16,7 +17,7 @@ const MyOrders = () => {
       console.log("Fetching orders...");
       try {
         const response = await fetch(
-          `https://shopcart-server-h67p.onrender.com/api/user/view-myorder`,
+          `${baseurl}/api/user/view-myorder`,
           {
             method: "GET",
             headers: {

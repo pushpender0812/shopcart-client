@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "../../store/Auth";
 import { toast } from "react-toastify";
+import { baseurl } from "../constant/constant";
 
 const WishListItem = ({ wishLists }) => {
   const { wishList, setWishList ,user,token,authorizationToken} = useAuth();
@@ -9,7 +10,7 @@ console.log(wishLists,"ppfojli yada g");
                                                      
     try {
       const response = await fetch(
-        `https://shopcart-server-h67p.onrender.com/api/user/remove-wishlist?user_id=${user.result._id}&product_id=${id}`,
+        `${baseurl}/api/user/remove-wishlist?user_id=${user.result._id}&product_id=${id}`,
         {
           method: "POST",
           headers: {
@@ -40,7 +41,7 @@ console.log(wishLists,"ppfojli yada g");
     console.log("CArt", product);
     console.log("user id",user.result._id);
     try {
-      const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/movetocart`, {
+      const response = await fetch(`${baseurl}/api/user/movetocart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

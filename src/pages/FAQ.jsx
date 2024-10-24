@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../store/Auth";
 import { toast } from "react-toastify";
+import { baseurl } from "../constant/constant";
 
 const FAQ = () => {
   const { getCategory, authorizationToken, token ,user} = useAuth();
@@ -31,7 +32,7 @@ const FAQ = () => {
 
     try {
       const response = await fetch(
-        `https://shopcart-server-h67p.onrender.com/api/user/ask-question`,
+        `${baseurl}/api/user/ask-question`,
         {
           method: "POST",
           headers: {
@@ -68,7 +69,7 @@ const FAQ = () => {
   const getAnswer = async () => {
     try {
       const response = await fetch(
-        `https://shopcart-server-h67p.onrender.com/api/user/get-answer`,
+        `${baseurl}/api/user/get-answer`,
         {
           method: "GET",
           headers: {

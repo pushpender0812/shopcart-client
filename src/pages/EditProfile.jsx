@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAuth } from "../../store/Auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { baseurl } from "../constant/constant";
 
 const EditProfile = () => {
   const { user,authorizationToken ,getCurrentUser} = useAuth();
@@ -54,7 +55,7 @@ const EditProfile = () => {
 
     try {
       const response = await fetch(
-        `https://shopcart-server-h67p.onrender.com/api/user/update-password?_id=${user.result._id}`,
+        `${baseurl}/api/user/update-password?_id=${user.result._id}`,
         {
           method: "POST",
           headers: {
@@ -96,7 +97,7 @@ const EditProfile = () => {
   
     try {
       const response = await fetch(
-        `https://shopcart-server-h67p.onrender.com/api/user/edit-profile?_id=${user.result._id}`,
+        `${baseurl}/api/user/edit-profile?_id=${user.result._id}`,
         {
           method: "POST",
           "Content-Type": "application/json",

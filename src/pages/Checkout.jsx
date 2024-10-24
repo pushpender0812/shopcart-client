@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { baseurl } from "../constant/constant";
 
 const Checkout = () => {
 
@@ -7,7 +8,7 @@ const Checkout = () => {
 
 	const getCartItem =  async () => {
 		try {
-		  const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/view-cart`, {
+		  const response = await fetch(`${baseurl}/api/user/view-cart`, {
 			method: "GET",
 			headers: {
 			  "Content-Type": "application/json",

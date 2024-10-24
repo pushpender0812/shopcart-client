@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../store/Auth";
 import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { baseurl } from "../constant/constant";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Cart = () => {
     console.log("remove from cart",productId);
     try {
       const response = await fetch(
-        `https://shopcart-server-h67p.onrender.com/api/user/remove-cart?user_id=${user.result._id}&product_id=${productId}`,
+        `${baseurl}/api/user/remove-cart?user_id=${user.result._id}&product_id=${productId}`,
         {
           method: "POST",
           headers: {
@@ -56,7 +57,7 @@ const Cart = () => {
       setCart(updatedCart);
 
       const response = await fetch(
-        `https://shopcart-server-h67p.onrender.com/api/user/update-cart-quantity?user_id=${user.result._id}&product_id=${productId}`,
+        `${baseurl}/api/user/update-cart-quantity?user_id=${user.result._id}&product_id=${productId}`,
         {
           method: "POST",
           headers: {
@@ -126,7 +127,7 @@ const Cart = () => {
   const getCoupon = async () => {
     try {
       const response = await fetch(
-        `https://shopcart-server-h67p.onrender.com/api/user/get-coupon`,
+        `${baseurl}/api/user/get-coupon`,
         {
           method: "GET",
           headers: {
@@ -216,7 +217,7 @@ const Cart = () => {
     try {
       // Fetching order details
       const orderResponse = await fetch(
-        `https://shopcart-server-h67p.onrender.com/api/user/checkout`,
+        `${baseurl}/api/user/checkout`,
         {
           method: "POST",
           headers: {
@@ -238,7 +239,7 @@ const Cart = () => {
       const orderResult = await orderResponse.json();
 
       // Fetching Razorpay key
-      const keyResponse = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/key`, {
+      const keyResponse = await fetch(`${baseurl}/api/user/key`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -279,7 +280,7 @@ const Cart = () => {
             console.log(coupon_id, "coupon id");
             console.log(total_price, "total price");
             const verificationResponse = await fetch(
-              `http://localhost:3000/api/user/paymentverification`,
+              `https://shopcart-client-omega.vercel.app/user/paymentverification`,
               {
                 method: "POST",
                 headers: {
@@ -304,7 +305,7 @@ const Cart = () => {
 
             const result = JSON.parse(verificationText);
             if (result.success) {
-              window.location.href = `https://shopcart-server-h67p.onrender.com/paymentsuccess?${response.razorpay_payment_id}`;
+              window.location.href = `${baseurl}/paymentsuccess?${response.razorpay_payment_id}`;
               removeFromCart(product_id);
             } else {
               console.error("Payment verification failed:", result.message);

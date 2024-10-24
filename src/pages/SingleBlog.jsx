@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams,NavLink } from 'react-router-dom';
 import {toast} from "react-toastify"
+import { baseurl } from '../constant/constant';
 
 const SingleBlog = () => {
 
@@ -21,7 +22,7 @@ const SingleBlog = () => {
 	const getBlogs = async () => {
 		try {
 		  const response = await fetch(
-			`https://shopcart-server-h67p.onrender.com/api/user/view-blogs`,
+			`${baseurl}/api/user/view-blogs`,
 			{
 			  method: "GET",
 			  headers: {

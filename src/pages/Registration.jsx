@@ -4,6 +4,7 @@ import { useAuth } from '../../store/Auth';
 import { toast } from 'react-toastify';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { baseurl } from '../constant/constant';
 
 const Registration = () => {
   const { storeTokenInloclStr, isLoggedIn } = useAuth();
@@ -28,7 +29,7 @@ const Registration = () => {
     }),
     onSubmit: async (values) => {
       try {
-        const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/register`, {
+        const response = await fetch(`${baseurl}/api/register`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

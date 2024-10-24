@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../store/Auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { baseurl } from "../constant/constant";
 
 const ProductItem = ({ product }) => {
   const { wishList,user,authorizationToken,setWishList } = useAuth();
@@ -18,7 +19,7 @@ const navigate = useNavigate()
     try {
 
 
-      const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/add-wishlist`, {
+      const response = await fetch(`${baseurl}/api/user/add-wishlist`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +48,7 @@ const navigate = useNavigate()
     }
   
     try {
-      const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/addtocart`, {
+      const response = await fetch(`${baseurl}/api/user/addtocart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +86,7 @@ const navigate = useNavigate()
   const handleRemoveWishList = async(id) => {
     console.log("id jkfj red heart clicked" ,id);
          try {
-          const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/remove-wishlist?user_id=${user.result._id}&product_id=${id}`, {
+          const response = await fetch(`${baseurl}/api/user/remove-wishlist?user_id=${user.result._id}&product_id=${id}`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -121,7 +122,7 @@ console.log(product,'dfjlf6toyo');
       <div className="col-sm-6 col-lg-4 col-xl-3" key={product._id}>
         <div className="card shadow h-100">
           <img
-            src={`https://shopcart-server-h67p.onrender.com/uploads/${product.image}`}
+            src={`${baseurl}/uploads/${product.image}`}
             className="card-img-top"
             alt={product.product_name}
             style={{height:"200px"}}

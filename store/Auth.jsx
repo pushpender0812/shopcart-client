@@ -1,4 +1,5 @@
 import { createContext,useContext, useEffect, useState } from "react";
+import { baseurl } from "../src/constant/constant";
 
 
 // 1)  Context
@@ -32,7 +33,7 @@ export const AuthProvider = ({children}) => {
 
     const getCategoryData = async() => {
         try {
-            const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/getcategory-data`,{
+            const response = await fetch(`${baseurl}/api/getcategory-data`,{
                 method:"GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -56,7 +57,7 @@ export const AuthProvider = ({children}) => {
 
     const getProductData = async() => {
         try {
-            const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/getproduct-data`,{
+            const response = await fetch(`${baseurl}/api/getproduct-data`,{
                 method:"GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -79,7 +80,7 @@ export const AuthProvider = ({children}) => {
 
     const getCurrentUser = async() => {
         try {
-            const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/user-me`,{
+            const response = await fetch(`${baseurl}/api/user/user-me`,{
                 method:"GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -103,7 +104,7 @@ export const AuthProvider = ({children}) => {
     const getWishlist = async () => {
         // console.log("pushpender e yadav",user);
         try {
-          const response = await fetch(`https://shopcart-server-h67p.onrender.com/user/view-wishlist`, {
+          const response = await fetch(`${baseurl}/user/view-wishlist`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -126,7 +127,7 @@ export const AuthProvider = ({children}) => {
       
   const getCartItem = async () => {
     try {
-      const response = await fetch(`https://shopcart-server-h67p.onrender.com/api/user/view-cart`, {
+      const response = await fetch(`${baseurl}/api/user/view-cart`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
