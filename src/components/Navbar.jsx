@@ -15,7 +15,7 @@ const Navbar = () => {
  
   useEffect(() => {
     getCartItem();
-  },[cart])
+  },[])
    
    
 

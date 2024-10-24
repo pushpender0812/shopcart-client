@@ -145,13 +145,13 @@ export const AuthProvider = ({children}) => {
       console.error("Error fetching cart items", error);
     }
   };
-  getCartItem()
+
     useEffect(() => {
         getCategoryData()
         getProductData()
         getCurrentUser()
         getWishlist()
-        
+        getCartItem()
     },[token])
     
     console.log(user,"Aedbasdvasdvasdf")
