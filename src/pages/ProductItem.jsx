@@ -114,6 +114,7 @@ const navigate = useNavigate()
   useEffect(() => {
     setToggleWishlist();
   }, []);
+console.log(product,'dfjlf6toyo');
 
   return (
     <>
