@@ -104,7 +104,7 @@ export const AuthProvider = ({children}) => {
     const getWishlist = async () => {
         // console.log("pushpender e yadav",user);
         try {
-          const response = await fetch(`${baseurl}/user/view-wishlist`, {
+          const response = await fetch(`${baseurl}/api/user/view-wishlist`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
