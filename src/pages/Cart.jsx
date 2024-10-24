@@ -280,7 +280,7 @@ const Cart = () => {
             console.log(coupon_id, "coupon id");
             console.log(total_price, "total price");
             const verificationResponse = await fetch(
-              `https://shopcart-client-omega.vercel.app/user/paymentverification`,
+              `${baseurl}/user/paymentverification`,
               {
                 method: "POST",
                 headers: {
