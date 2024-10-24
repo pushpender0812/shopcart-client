@@ -305,7 +305,7 @@ const Cart = () => {
 
             const result = JSON.parse(verificationText);
             if (result.success) {
-              window.location.href = `${baseurl}/paymentsuccess?${response.razorpay_payment_id}`;
+              window.location.href = `https://shopcart-client-omega.vercel.app/paymentsuccess?${response.razorpay_payment_id}`;
               removeFromCart(product_id);
             } else {
               console.error("Payment verification failed:", result.message);
