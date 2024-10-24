@@ -280,7 +280,7 @@ const Cart = () => {
             console.log(coupon_id, "coupon id");
             console.log(total_price, "total price");
             const verificationResponse = await fetch(
-              `${baseurl}/user/paymentverification`,
+              `${baseurl}/api/user/paymentverification`,
               {
                 method: "POST",
                 headers: {
